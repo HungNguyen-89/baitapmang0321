@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="i">
+    <input type="text" id="j">
+    <button onclick="tik()">Đánh</button>
+    <div id="table"></div>
+    <br>
+
+    <script>
+        let arr = [["_", "_", "_"], ["_", "_", "_"], ["_", "_", "_"]];
+        let str = "";
+        let dem = 1;
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr[i].length; j++) {
+                str += arr[i][j] + " ";
+            }
+            str += "<br>"
+        }
+        document.getElementById("table").innerHTML = str;
+        function tik() {
+            let i = +document.getElementById("i").value;
+            let j = +document.getElementById("j").value;
+            dem++;
+            if (dem % 2 == 0) {
+                arr[i][j] = "0";
+                let str = "";
+                for (let i = 0; i < arr.length; i++) {
+                    for (let j = 0; j < arr[i].length; j++) {
+                        str += arr[i][j] + " ";
+                    }
+                    str += "<br>"
+                }
+                document.getElementById("table").innerHTML = str;
+            }
+            else {
+                arr[i][j] = "x";
+                let str = "";
+                for (let i = 0; i < arr.length; i++) {
+                    for (let j = 0; j < arr[i].length; j++) {
+                        str += arr[i][j] + " ";
+                    }
+                    str += "<br>"
+                }
+                document.getElementById("table").innerHTML = str;
+            }
+            if (arr[0][0] == "0" && arr[1][1] == "0" && arr[2][2] == "0")
+                alert("0 là người chiến thắng")
+            if (arr[0][0] == "x" && arr[1][1] == "x" && arr[2][2] == "x")
+                alert("x là người chiến thắng")
+            if (arr[2][0] == "0" && arr[1][1] == "0" && arr[0][2] == "0")
+                alert("0 là người chiến thắng")
+            if (arr[2][0] == "x" && arr[1][1] == "x" && arr[0][2] == "x")
+                alert("x là người chiến thắng")
+            for (let i = 0; i < arr.length; i++) {
+                for (let j = 0; j < arr[i].length; j++) {
+                    if (arr[i][j] == "x") {
+                        if (arr[i][j + 1] == "x" && arr[i][j + 2] == "x") {
+                            alert("x là người chiến thắng")
+                        }
+                    }
+                    if (arr[i][j] == "0") {
+                        if (arr[i][j + 1] == "0" && arr[i][j + 2] == "0") {
+                            alert("0 là người chiến thắng")
+                        }
+                    }
+                    if (arr[i][j] == "x") {
+                        if (arr[i + 1][j] == "x" && arr[i + 2][j] == "x") {
+                            alert("x là người chiến thắng")
+                        }
+                    }
+                    if (arr[i][j] == "0") {
+                        if (arr[i + 1][j] == "0" && arr[i + 2][j] == "0") {
+                            alert("0 là người chiến thắng")
+                        }
+                    }
+                }
+            }
+        }	
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <body>
+        <center>
+            <h2>Type anthing slowly</h2>
+            <form name="f">
+                <textarea name="txt" cols="40" rows="10" id="text" onkeydown="fake();"></textarea><br><br>
+            </form>
+        </center>
+
+        <script>
+            let a = [];
+            a[1] = 'T';
+            a[2] = 'Ô';
+            a[3] = 'I';
+            a[4] = ' ';
+            a[5] = 'L';
+            a[6] = 'À';
+            a[7] = ' ';
+            a[8] = 'M';
+            a[9] = 'Ộ';
+            a[10] = 'T';
+            a[11] = ' ';
+            a[12] = 'H';
+            a[13] = 'A';
+            a[14] = 'C';
+            a[15] = 'K';
+            a[16] = 'E';
+            a[17] = 'R';
+            a[18] = '!';
+            a[19] = '!';
+            a[20] = '!';
+            function fake() {
+                let t = document.getElementById("text").value;
+                let j = t.length;
+                let n = "";
+                let i;
+                setTimeout("fake()", 1);
+                for (i = 1; i <= j; i++) {
+                    n = n + a[i];
+                    document.getElementById("text").value = n;
+                    if (i > 20) {
+                        document.getElementById("text").value = "";
+                    }
+                }
+            }
+        </script>
+    </body>
+
+</body>
+
+</html>

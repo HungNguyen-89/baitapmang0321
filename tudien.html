@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Từ cần tra cứu</h3>
+    <input type="text" id="english"><br>
+    <h3>Nghĩa tiếng Việt</h3>
+    <input type="text" id="vietnamese"><br><br>
+    <button type="button" onclick="findByName()">Change</button>
+
+    <script>
+        let ta = ["hello", "good moring", "car", "pen", "dog"]
+        let tv = ["xin chào", "chào buổi sáng", "xe ôtô", "bút", "chó"]
+        let i;
+        function findByName() {
+            let input = document.getElementById("english").value;
+            let index = -1;
+            for (let i = 0; i < ta.length; i++) {
+                if (ta[i] == input) { index = i; }
+            }
+            if (index == -1) {
+                alert("Không tìm thấy từ cần tra cứu")
+            }
+            else { document.getElementById("vietnamese").value = tv[index]; }
+        }
+    </script>
+
+</body>
+
+</html>
